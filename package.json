@@ -1,0 +1,25 @@
+{
+  "name": "nearest-neighbors",
+  "version": "1.0.0",
+  "description": "Find nearest neighbors.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/_mocha --",
+    "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha --",
+    "view-coverage": "open ./coverage/lcov-report/index.html"
+  },
+  "repository": "flipactual/nearest-neighbors",
+  "author": "Flip",
+  "license": "MIT",
+  "devDependencies": {
+    "is-equal-enough": "^3.0.0",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "get-euclidean-distance": "^1.0.2"
+  },
+  "engines": {
+    "node": ">=5.0.0"
+  }
+}
