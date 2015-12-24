@@ -1,8 +1,4 @@
 'use strict'
-const {
-  parse,
-  stringify,
-} = JSON
 const getEuclideanDistance = require('get-euclidean-distance')
 const getRangeAdjustedDifference = require('./lib/getRangeAdjustedDifference')
 
@@ -30,7 +26,9 @@ module.exports = class {
    * The nearest neighbor machine.
    */
   train(nodes, features) {
-    this.nodes = parse(stringify(nodes))
+    this.nodes = JSON.parse(JSON.stringify(nodes)).map(neighbor => ({
+      neighbor,
+    }))
     this.features = features
     return this
   }
@@ -59,7 +57,7 @@ module.exports = class {
    */
   calculateRanges() {
     this.features.forEach(key => {
-      const featureValues = this.nodes.map(neighbor => neighbor[key])
+      const featureValues = this.nodes.map(neighbor => neighbor.neighbor[key])
       this.ranges[key] = Math.max(...featureValues) - Math.min(...featureValues)
     })
   }
@@ -95,7 +93,7 @@ module.exports = class {
    */
   getDistancesFromNeighbor(node, neighbor) {
     return this.features.map(key => getRangeAdjustedDifference(
-      neighbor[key],
+      neighbor.neighbor[key],
       node[key],
       this.ranges[key]
     ))

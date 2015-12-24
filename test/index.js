@@ -29,12 +29,16 @@ describe('NearestNeighbor', () => {
       ])
       assert.deepEqual(machine.nodes, [
         {
-          x: 0,
-          y: 0,
+          neighbor: {
+            x: 0,
+            y: 0,
+          },
         },
         {
-          x: 10,
-          y: 10,
+          neighbor: {
+            x: 10,
+            y: 10,
+          },
         },
       ])
       assert.deepEqual(machine.features, [
@@ -65,13 +69,17 @@ describe('NearestNeighbor', () => {
       assert.deepEqual(twoNearestNeighbors, [
         {
           distance: 0.5590169943749475,
-          x: 10,
-          y: 10,
+          neighbor: {
+            x: 10,
+            y: 10,
+          },
         },
         {
           distance: 0.9013878188659973,
-          x: 0,
-          y: 0,
+          neighbor: {
+            x: 0,
+            y: 0,
+          },
         },
       ])
     })
@@ -152,8 +160,10 @@ describe('NearestNeighbor', () => {
         x: 25,
         y: 25,
       }, {
-        x: 75,
-        y: 75,
+        neighbor: {
+          x: 75,
+          y: 75,
+        },
       })
       assert.deepEqual(distances, [
         0.5,

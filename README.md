@@ -26,13 +26,17 @@ const twoNearestNeighbors = machine.getNearestNeighbors({
 twoNearestNeighbors
 // → [
 //   {
-//     x: 10,
-//     y: 10,
+//     neighbor: {
+//       x: 10,
+//       y: 10,
+//     }
 //     distance: 0.5590169943749475
 //   },
 //   {
-//     x: 0,
-//     y: 0,
+//     neighbor: {
+//       x: 0,
+//       y: 0,
+//     }
 //     distance: 0.9013878188659973
 //   }
 // ]
