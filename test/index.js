@@ -160,21 +160,4 @@ describe('NearestNeighbor', () => {
       ])
     })
   })
-  describe('#getDistanceFromNeighbor()', () => {
-    it('Returns the distance from one node to another adjusted for the range', () => {
-      const machine = new NN().train([
-        {
-          x: 0,
-        },
-        {
-          x: 100,
-        },
-      ], [
-        'x',
-      ])
-      machine.calculateRanges()
-      const distance = machine.getDistanceFromNeighbor(25, 75, machine.ranges.x)
-      assert.equal(distance, -0.5)
-    })
-  })
 })

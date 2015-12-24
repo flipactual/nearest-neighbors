@@ -1,6 +1,6 @@
 'use strict'
-const getValueInRange = require('./lib/getValueInRange')
 const getEuclideanDistance = require('get-euclidean-distance')
+const getRangeAdjustedDifference = require('./lib/getRangeAdjustedDifference')
 
 /**
  * Initializes a machine for finding nearest neighbors.
@@ -90,28 +90,10 @@ module.exports = class {
    * The distances from this node to the neighbor in each dimension.
    */
   getDistancesFromNeighbor(node, neighbor) {
-    return this.features.map(key => this.getDistanceFromNeighbor(
+    return this.features.map(key => getRangeAdjustedDifference(
       neighbor[key],
       node[key],
       this.ranges[key]
     ))
-  }
-  /**
-   * Find the range adjusted distance from this node to a neighbor node in a
-   * single dimension.
-   *
-   * @param {Number} neighborValue
-   * The neighbor's value for this dimension.
-   * @param {Number} nodeValue
-   * This node's value for this dimension.
-   * @param {Number} range
-   * The range to adjust the values for.
-   *
-   * @return {Number}
-   * The range adjusted distance from this node to the neighbor node.
-   */
-  getDistanceFromNeighbor(neighborValue, nodeValue, range) {
-    return getValueInRange(neighborValue, range)
-      - getValueInRange(nodeValue, range)
   }
 }
