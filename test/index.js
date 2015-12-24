@@ -75,6 +75,27 @@ describe('NearestNeighbor', () => {
         },
       ])
     })
+    it('Does not alter the trained nodes', () => {
+      const nodes = [
+        {
+          x: 0,
+          y: 0,
+        },
+        {
+          x: 10,
+          y: 10,
+        },
+      ]
+      const machine = new NN().train(nodes, [
+        'x',
+        'y',
+      ])
+      machine.getNearestNeighbors({
+        x: 5,
+        y: 7.5,
+      }, 2)
+      assert.deepEqual(nodes, machine.nodes)
+    })
   })
   describe('#calculateRanges()', () => {
     it('Calculates the range based on lowest and highest values for a feature', () => {
