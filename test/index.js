@@ -75,15 +75,11 @@ describe('NearestNeighbor', () => {
         },
       ])
     })
-    it('Does not alter the trained nodes', () => {
+    it('Does not alter nodes during training', () => {
       const nodes = [
         {
           x: 0,
           y: 0,
-        },
-        {
-          x: 10,
-          y: 10,
         },
       ]
       const machine = new NN().train(nodes, [
@@ -93,8 +89,13 @@ describe('NearestNeighbor', () => {
       machine.getNearestNeighbors({
         x: 5,
         y: 7.5,
-      }, 2)
-      assert.deepEqual(nodes, machine.nodes)
+      }, 1)
+      assert.deepEqual(nodes, [
+        {
+          x: 0,
+          y: 0,
+        },
+      ])
     })
   })
   describe('#calculateRanges()', () => {
