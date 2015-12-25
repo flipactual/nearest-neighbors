@@ -5,7 +5,7 @@ Find nearest neighbors.
 ## Example:
 
 ```js
-const NN = require('./')
+const NN = require('nearest-neighbors')
 const machine = new NN().train([
   {
     x: 0,
