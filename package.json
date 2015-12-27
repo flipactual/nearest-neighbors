@@ -1,6 +1,6 @@
 {
   "name": "nearest-neighbors",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Find nearest neighbors.",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,8 @@
     "mocha": "^2.3.4"
   },
   "dependencies": {
-    "get-euclidean-distance": "^1.0.2"
+    "get-euclidean-distance": "^1.0.2",
+    "get-value-in-range": "^1.0.0"
   },
   "engines": {
     "node": ">=5.0.0"

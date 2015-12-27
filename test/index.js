@@ -1,5 +1,6 @@
 const assert = require('assert')
 const isEqualEnough = require('is-equal-enough')(Number.EPSILON)
+const getValueInRange = require('get-value-in-range')
 const NN = require('../')
 
 describe('NearestNeighbor', () => {
@@ -106,22 +107,6 @@ describe('NearestNeighbor', () => {
       ])
     })
   })
-  describe('#calculateRanges()', () => {
-    it('Calculates the range based on lowest and highest values for a feature', () => {
-      const machine = new NN().train([
-        {
-          x: 5,
-        },
-        {
-          x: 10,
-        },
-      ], [
-        'x',
-      ])
-      machine.calculateRanges()
-      assert.equal(machine.ranges.x, 5)
-    })
-  })
   describe('#setDistancesFromNeighbors()', () => {
     it('Assigns the distance from the provided node to the neighbor', () => {
       const machine = new NN().train([
@@ -155,7 +140,14 @@ describe('NearestNeighbor', () => {
         'x',
         'y',
       ])
-      machine.calculateRanges()
+      machine.ranges.x = getValueInRange([
+        0,
+        100,
+      ])
+      machine.ranges.y = getValueInRange([
+        0,
+        100,
+      ])
       const distances = machine.getDistancesFromNeighbor({
         x: 25,
         y: 25,

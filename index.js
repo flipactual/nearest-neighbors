@@ -1,6 +1,6 @@
 'use strict'
 const getEuclideanDistance = require('get-euclidean-distance')
-const getRangeAdjustedDifference = require('./lib/getRangeAdjustedDifference')
+const getValueInRange = require('get-value-in-range')
 
 /**
  * Initializes a machine for finding nearest neighbors.
@@ -44,22 +44,10 @@ module.exports = class {
    * The nearest neighbors.
    */
   getNearestNeighbors(node, desiredNeighbors) {
-    this.calculateRanges(node)
     this.setDistancesFromNeighbors(node)
     return this.nodes
       .sort((a, b) => a.distance - b.distance)
       .slice(0, desiredNeighbors)
-  }
-  /**
-   * Adds range values for each feature based on the provided nodes.
-   *
-   * @return {undefined}
-   */
-  calculateRanges() {
-    this.features.forEach(key => {
-      const featureValues = this.nodes.map(neighbor => neighbor.neighbor[key])
-      this.ranges[key] = Math.max(...featureValues) - Math.min(...featureValues)
-    })
   }
   /**
    * Assigns a distance from supplied node to each neighbor.
@@ -70,6 +58,9 @@ module.exports = class {
    * @return {undefined}
    */
   setDistancesFromNeighbors(node) {
+    this.features.forEach(key => {
+      this.ranges[key] = getValueInRange(this.nodes.map(neighbor => neighbor.neighbor[key]))
+    })
     this.nodes.forEach(neighbor => {
       neighbor.distance = getEuclideanDistance(
         this.getDistancesFromNeighbor(
@@ -92,10 +83,6 @@ module.exports = class {
    * The distances from this node to the neighbor in each dimension.
    */
   getDistancesFromNeighbor(node, neighbor) {
-    return this.features.map(key => getRangeAdjustedDifference(
-      neighbor.neighbor[key],
-      node[key],
-      this.ranges[key]
-    ))
+    return this.features.map(key => this.ranges[key](neighbor.neighbor[key]) - this.ranges[key](node[key]))
   }
 }
