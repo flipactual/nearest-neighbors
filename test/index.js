@@ -1,21 +1,19 @@
 const assert = require('assert')
 const isEqualEnough = require('is-equal-enough')(Number.EPSILON)
 const getValueInRange = require('get-value-in-range')
-const NN = require('../')
+const NearestNeighbors = require('../')
 
-describe('NearestNeighbor', () => {
+describe('NearestNeighbors', () => {
   describe('#constructor()', () => {
     it('Creates a new NearestNeighbor machine', () => {
-      const machine = new NN()
-      assert.equal(NN.prototype.isPrototypeOf(machine), true)
+      const machine = new NearestNeighbors()
+      assert.equal(NearestNeighbors.prototype.isPrototypeOf(machine), true)
       assert.deepEqual(machine.nodes, [])
       assert.deepEqual(machine.features, [])
       assert.deepEqual(machine.ranges, {})
     })
-  })
-  describe('#train()', () => {
     it('Applies the provided nodes and features', () => {
-      const machine = new NN().train([
+      const machine = new NearestNeighbors([
         {
           x: 0,
           y: 0,
@@ -50,7 +48,7 @@ describe('NearestNeighbor', () => {
   })
   describe('#getNearestNeighbors()', () => {
     it('Finds the specified number of nearest neighbors', () => {
-      const machine = new NN().train([
+      const machine = new NearestNeighbors([
         {
           x: 0,
           y: 0,
@@ -91,7 +89,7 @@ describe('NearestNeighbor', () => {
           y: 0,
         },
       ]
-      const machine = new NN().train(nodes, [
+      const machine = new NearestNeighbors(nodes, [
         'x',
         'y',
       ])
@@ -109,7 +107,7 @@ describe('NearestNeighbor', () => {
   })
   describe('#setDistancesFromNeighbors()', () => {
     it('Assigns the distance from the provided node to the neighbor', () => {
-      const machine = new NN().train([
+      const machine = new NearestNeighbors([
         {
           x: 5,
         },
@@ -127,7 +125,7 @@ describe('NearestNeighbor', () => {
   })
   describe('#getDistancesFromNeighbor()', () => {
     it('Returns an array of the distances between two nodes in each feature dimension', () => {
-      const machine = new NN().train([
+      const machine = new NearestNeighbors([
         {
           x: 0,
           y: 100,

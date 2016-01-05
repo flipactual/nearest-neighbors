@@ -5,8 +5,8 @@ Find nearest neighbors.
 ## Example:
 
 ```js
-const NN = require('nearest-neighbors')
-const machine = new NN().train([
+const NearestNeighbors = require('nearest-neighbors')
+const machine = new NearestNeighbors([
   {
     x: 0,
     y: 0,

@@ -9,28 +9,12 @@ const getValueInRange = require('get-value-in-range')
  * @classdesc A machine for finding nearest neighbors.
  */
 module.exports = class {
-  constructor() {
-    this.nodes = []
-    this.features = []
-    this.ranges = {}
-  }
-  /**
-   * Train the nearest neighbor machine.
-   *
-   * @param {Array} nodes
-   * The nodes to train on.
-   * @param {Array} features
-   * The keys for the features to track.
-   *
-   * @return {Object}
-   * The nearest neighbor machine.
-   */
-  train(nodes, features) {
-    this.nodes = JSON.parse(JSON.stringify(nodes)).map(neighbor => ({
+  constructor(nodes, features) {
+    this.nodes = nodes ? JSON.parse(JSON.stringify(nodes)).map(neighbor => ({
       neighbor,
-    }))
-    this.features = features
-    return this
+    })) : []
+    this.features = features || []
+    this.ranges = {}
   }
   /**
    * Find the specified number of nearest neighbors for the provided node.
