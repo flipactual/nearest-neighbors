@@ -69,4 +69,26 @@ module.exports = class {
   getDistancesFromNeighbor(node, neighbor) {
     return this.features.map(key => this.ranges[key](neighbor.neighbor[key]) - this.ranges[key](node[key]))
   }
+  /**
+   * Classify an entity based on its neighbors.
+   *
+   * @param {Object} node
+   * The node to find neighbors for and classify.
+   * @param {Number} desiredNeighbors
+   * The number of neighbors to find.
+   * @param {String} key
+   * The key to infer a value for.
+   *
+   * @return {String}
+   * The infered classification.
+   */
+  classify(node, desiredNeighbors, key) {
+    const types = {}
+    this.getNearestNeighbors(node, desiredNeighbors).forEach(neighbor => {
+      const typeKey = neighbor.neighbor[key]
+      !types[typeKey] && (types[typeKey] = 0)
+      types[typeKey] += 1 / (neighbor.distance || Number.EPSILON)
+    })
+    return Object.keys(types).sort((a, b) => types[b] - types[a])[0]
+  }
 }

@@ -61,11 +61,10 @@ describe('NearestNeighbors', () => {
         'x',
         'y',
       ])
-      const twoNearestNeighbors = machine.getNearestNeighbors({
+      assert.deepEqual(machine.getNearestNeighbors({
         x: 5,
         y: 7.5,
-      }, 2)
-      assert.deepEqual(twoNearestNeighbors, [
+      }, 2), [
         {
           distance: 0.5590169943749475,
           neighbor: {
@@ -159,6 +158,60 @@ describe('NearestNeighbors', () => {
         0.5,
         0.5,
       ])
+    })
+  })
+  describe('#classify()', () => {
+    it('Returns the unique type for nearest neighbor', () => {
+      const machine = new NearestNeighbors([
+        {
+          x: 0,
+          y: 0,
+          class: 'good',
+        },
+        {
+          x: 10,
+          y: 10,
+          class: 'bad',
+        },
+        {
+          x: 1,
+          y: 1,
+          class: 'ugly',
+        },
+      ], [
+        'x',
+        'y',
+      ])
+      assert.equal(machine.classify({
+        x: 1,
+        y: 1,
+      }, 1, 'class'), 'ugly')
+    })
+    it('Returns most common type from nearest neighbors', () => {
+      const machine = new NearestNeighbors([
+        {
+          x: 0,
+          y: 0,
+          class: 'good',
+        },
+        {
+          x: 10,
+          y: 10,
+          class: 'bad',
+        },
+        {
+          x: 10,
+          y: 10,
+          class: 'good',
+        },
+      ], [
+        'x',
+        'y',
+      ])
+      assert.equal(machine.classify({
+        x: 5,
+        y: 7.5,
+      }, 3, 'class'), 'good')
     })
   })
 })
