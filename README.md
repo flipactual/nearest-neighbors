@@ -1,12 +1,12 @@
 # nearest-neighbors
 
-Find nearest neighbors.
+Find nearest neighbors & classify entities based on their neighbors.
 
 ## Example:
 
 ```js
-const NearestNeighbors = require('nearest-neighbors')
-const machine = new NearestNeighbors([
+const NN = require('nearest-neighbors')
+const machine = new NN([
   {
     x: 0,
     y: 0,
@@ -19,11 +19,11 @@ const machine = new NearestNeighbors([
   'x',
   'y',
 ])
-const twoNearestNeighbors = machine.getNearestNeighbors({
+
+machine.getNearestNeighbors({
   x: 5,
   y: 7.5,
 }, 2)
-twoNearestNeighbors
 // → [
 //   {
 //     neighbor: {
@@ -40,4 +40,10 @@ twoNearestNeighbors
 //     distance: 0.9013878188659973
 //   }
 // ]
+
+machine.classify({
+  x: 1,
+  y: 1,
+}, 1, 'class')
+// → 'ugly'
 ```
