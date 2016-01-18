@@ -10,7 +10,7 @@ const getValueInRange = require('get-value-in-range')
  */
 module.exports = class {
   constructor(nodes, features) {
-    this.nodes = nodes ? JSON.parse(JSON.stringify(nodes)).map(neighbor => ({
+    this.nodes = nodes ? nodes.map(neighbor => ({
       neighbor,
     })) : []
     this.features = features || []
