@@ -2,7 +2,9 @@
 
 Find nearest neighbors & classify entities based on their neighbors.
 
-## Example:
+## Examples:
+
+### `getNearestNeighbors`
 
 ```js
 const NN = require('nearest-neighbors')
@@ -40,6 +42,32 @@ machine.getNearestNeighbors({
 //     distance: 0.9013878188659973
 //   }
 // ]
+```
+
+### `classify`
+
+```js
+const NN = require('nearest-neighbors')
+const machine = new NearestNeighbors([
+  {
+    x: 0,
+    y: 0,
+    class: 'good',
+  },
+  {
+    x: 10,
+    y: 10,
+    class: 'bad',
+  },
+  {
+    x: 1,
+    y: 1,
+    class: 'ugly',
+  },
+], [
+  'x',
+  'y',
+])
 
 machine.classify({
   x: 1,
