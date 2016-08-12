@@ -1,13 +1,13 @@
 const getEuclideanDistance = require('get-euclidean-distance');
 const getValueInRange = require('get-value-in-range');
 
-/**
- * Initializes a machine for finding nearest neighbors.
- *
- * @class
- * @classdesc A machine for finding nearest neighbors.
- */
-module.exports = class {
+class NearestNeighbors {
+  /**
+   * constructor
+   * Initializes a machine for finding nearest neighbors.
+   *
+   * @return {undefined}
+   */
   constructor(nodes, features) {
     this.nodes = nodes ? nodes.map(neighbor => ({
       neighbor,
@@ -94,4 +94,6 @@ module.exports = class {
     });
     return Object.keys(types).sort((a, b) => types[b] - types[a])[0];
   }
-};
+}
+
+module.exports = NearestNeighbors;

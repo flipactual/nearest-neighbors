@@ -3,15 +3,23 @@
   "version": "4.0.1",
   "description": "Find nearest neighbors & classify entities based on their neighbors.",
   "main": "index.js",
+  "license": "MIT",
+  "repository": "flipactual/nearest-neighbors",
+  "author": {
+    "name": "Flip",
+    "id": 1306968,
+    "url": "https://github.com/flipactual"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "scripts": {
     "test": "node_modules/.bin/_mocha --",
     "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha --",
     "view-coverage": "open ./coverage/lcov-report/index.html",
-    "lint": "node_modules/.bin/eslint ./**/*.js --"
+    "lint": "node_modules/.bin/eslint ./**/*.js --",
+    "write-readme": "./node_modules/.bin/emdaer"
   },
-  "repository": "flipactual/nearest-neighbors",
-  "author": "Flip",
-  "license": "MIT",
   "dependencies": {
     "get-euclidean-distance": "^1.0.2",
     "get-value-in-range": "^1.0.0",
@@ -20,11 +28,8 @@
   "devDependencies": {
     "eslint": "^3.2.2",
     "eslint-config-airbnb-base": "^5.0.1",
-    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-import": "^1.13.0",
     "istanbul": "^0.4.1",
     "mocha": "^2.3.4"
-  },
-  "engines": {
-    "node": ">=6.0.0"
   }
 }
