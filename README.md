@@ -1,7 +1,39 @@
-[![flipactual](https://img.shields.io/badge/😋-flipactual-43A6F6.svg?style=flat-square)](https://flipactual.com/)
+[![flipactual](https://img.shields.io/badge/😋-flipactual-218AC7.svg?style=flat-square)](https://www.flipactual.com/)
 [![Travis](https://img.shields.io/travis/flipactual/nearest-neighbors.svg?style=flat-square)](https://travis-ci.org/flipactual/nearest-neighbors/)
 [![Node](https://img.shields.io/node/v/nearest-neighbors.svg?style=flat-square)](http://npmjs.com/package/nearest-neighbors)
 [![NPM](https://img.shields.io/npm/v/nearest-neighbors.svg?style=flat-square)](http://npmjs.com/package/nearest-neighbors)
+
+## Scripts
+
+### `test` – run the tests
+
+```sh
+npm run test
+```
+
+### `coverage` – generate test coverage
+
+```sh
+npm run coverage
+```
+
+### `view-coverage` – view test coverage
+
+```sh
+npm run view-coverage
+```
+
+### `lint` – lint the codebase
+
+```sh
+npm run lint
+```
+
+### `write-readme` – generate the README
+
+```sh
+npm run write-readme
+```
 
 <a name="NearestNeighbors"></a>
 

@@ -2,8 +2,8 @@
     style: 'flat-square'
     shields:
       - alt: 'flipactual'
-        image: 'badge/😋-flipactual-43A6F6.svg'
-        link: 'https://flipactual.com/'
+        image: 'badge/😋-flipactual-218AC7.svg'
+        link: 'https://www.flipactual.com/'
       - alt: 'Travis'
         image: 'travis/flipactual/nearest-neighbors.svg'
         link: 'https://travis-ci.org/flipactual/nearest-neighbors/'
@@ -13,5 +13,6 @@
       - alt: 'NPM'
         image: 'npm/v/nearest-neighbors.svg'
         link: 'http://npmjs.com/package/nearest-neighbors'
+- include: './docs/scripts.md'
 - jsdoc: 'index.js'
 - license: true
