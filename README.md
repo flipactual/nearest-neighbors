@@ -1,7 +1,12 @@
+# nearest-neighbors
+
 [![flipactual](https://img.shields.io/badge/😋-flipactual-218AC7.svg?style=flat-square)](https://www.flipactual.com/)
 [![Travis](https://img.shields.io/travis/flipactual/nearest-neighbors.svg?style=flat-square)](https://travis-ci.org/flipactual/nearest-neighbors/)
+[![Codecov](https://img.shields.io/codecov/c/github/flipactual/nearest-neighbors.svg?style=flat-square)](https://codecov.io/gh/flipactual/nearest-neighbors/)
 [![Node](https://img.shields.io/node/v/nearest-neighbors.svg?style=flat-square)](http://npmjs.com/package/nearest-neighbors)
 [![NPM](https://img.shields.io/npm/v/nearest-neighbors.svg?style=flat-square)](http://npmjs.com/package/nearest-neighbors)
+
+Find nearest neighbors & classify entities based on their neighbors
 
 ## Scripts
 

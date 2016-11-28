@@ -1,3 +1,4 @@
+- title: true
 - shields:
     style: 'flat-square'
     shields:
@@ -7,12 +8,16 @@
       - alt: 'Travis'
         image: 'travis/flipactual/nearest-neighbors.svg'
         link: 'https://travis-ci.org/flipactual/nearest-neighbors/'
+      - alt: 'Codecov'
+        image: 'codecov/c/github/flipactual/nearest-neighbors.svg'
+        link: 'https://codecov.io/gh/flipactual/nearest-neighbors/'
       - alt: 'Node'
         image: 'node/v/nearest-neighbors.svg'
         link: 'http://npmjs.com/package/nearest-neighbors'
       - alt: 'NPM'
         image: 'npm/v/nearest-neighbors.svg'
         link: 'http://npmjs.com/package/nearest-neighbors'
+- text: 'Find nearest neighbors & classify entities based on their neighbors'
 - include: './docs/scripts.md'
 - jsdoc: 'index.js'
 - license: true
