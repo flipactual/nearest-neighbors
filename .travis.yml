@@ -4,3 +4,4 @@ install: npm i
 script:
   - npm t
   - npm run lint
+after_success: npm run codecov

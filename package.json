@@ -1,6 +1,6 @@
 {
   "name": "nearest-neighbors",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "Find nearest neighbors & classify entities based on their neighbors",
   "main": "index.js",
   "license": "MIT",
@@ -30,6 +30,7 @@
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-preset-latest": "^6.16.0",
+    "codecov": "^1.0.1",
     "emdaer": "^0.3.3",
     "eslint": "^3.2.2",
     "eslint-config-airbnb-base": "^5.0.1",
