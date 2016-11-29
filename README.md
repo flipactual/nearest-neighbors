@@ -8,38 +8,6 @@
 
 Find nearest neighbors & classify entities based on their neighbors
 
-## Scripts
-
-### `test` – run the tests
-
-```sh
-npm run test
-```
-
-### `coverage` – generate test coverage
-
-```sh
-npm run coverage
-```
-
-### `view-coverage` – view test coverage
-
-```sh
-npm run view-coverage
-```
-
-### `lint` – lint the codebase
-
-```sh
-npm run lint
-```
-
-### `write-readme` – generate the README
-
-```sh
-npm run write-readme
-```
-
 <a name="NearestNeighbors"></a>
 
 ## NearestNeighbors
@@ -110,6 +78,38 @@ Classify an entity based on its neighbors.
 | desiredNeighbors | <code>Number</code> | The number of neighbors to find. |
 | key | <code>String</code> | The key to infer a value for. |
 
+
+## Scripts
+
+### `test` – run the tests
+
+```sh
+npm run test
+```
+
+### `coverage` – generate test coverage
+
+```sh
+npm run coverage
+```
+
+### `view-coverage` – view test coverage
+
+```sh
+npm run view-coverage
+```
+
+### `lint` – lint the codebase
+
+```sh
+npm run lint
+```
+
+### `write-readme` – generate the README
+
+```sh
+npm run write-readme
+```
 
 ## License
 
