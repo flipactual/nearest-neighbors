@@ -1,7 +1,7 @@
 const assert = require('assert');
 const isEqualEnough = require('is-equal-enough')(Number.EPSILON);
 const getValueInRange = require('get-value-in-range');
-const NearestNeighbors = require('../');
+const NearestNeighbors = require('../src');
 
 describe('NearestNeighbors', () => {
   describe('#constructor()', () => {

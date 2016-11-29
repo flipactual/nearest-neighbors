@@ -1,6 +1,6 @@
 {
   "name": "nearest-neighbors",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "Find nearest neighbors & classify entities based on their neighbors",
   "main": "index.js",
   "license": "MIT",
@@ -18,7 +18,9 @@
     "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha --",
     "view-coverage": "open ./coverage/lcov-report/index.html",
     "lint": "node_modules/.bin/eslint ./**/*.js --",
-    "readme": "./node_modules/.bin/emdaer"
+    "readme": "emdaer",
+    "compile": "babel src -d lib",
+    "prepublish": "npm run compile"
   },
   "dependencies": {
     "get-euclidean-distance": "^1.0.2",
@@ -26,6 +28,8 @@
     "is-equal-enough": "^3.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
     "emdaer": "^0.3.3",
     "eslint": "^3.2.2",
     "eslint-config-airbnb-base": "^5.0.1",

@@ -18,6 +18,6 @@
         image: 'npm/v/nearest-neighbors.svg'
         link: 'http://npmjs.com/package/nearest-neighbors'
 - text: 'Find nearest neighbors & classify entities based on their neighbors'
+- jsdoc: './src/index.js'
 - include: './docs/scripts.md'
-- jsdoc: 'index.js'
 - license: true
