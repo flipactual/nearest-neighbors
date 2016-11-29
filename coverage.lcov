@@ -1,0 +1,85 @@
+
+
+  NearestNeighbors
+    #constructor()
+      ✓ Creates a new NearestNeighbor machine
+      ✓ Applies the provided nodes and features
+    #getNearestNeighbors()
+      ✓ Finds the specified number of nearest neighbors
+      ✓ Does not alter nodes during training
+    #setDistancesFromNeighbors()
+      ✓ Assigns the distance from the provided node to the neighbor
+    #getDistancesFromNeighbor()
+      ✓ Returns an array of the distances between two nodes in each feature dimension
+    #classify()
+      ✓ Returns the unique type for nearest neighbor
+      ✓ Returns most common type from nearest neighbors
+
+
+  8 passing (16ms)
+
+TN:
+SF:/Users/flipactual/Dev/nearest-neighbors/src/index.js
+FN:11,(anonymous_0)
+FN:12,(anonymous_1)
+FN:29,(anonymous_2)
+FN:32,(anonymous_3)
+FN:43,(anonymous_4)
+FN:44,(anonymous_5)
+FN:45,(anonymous_6)
+FN:47,(anonymous_7)
+FN:68,(anonymous_8)
+FN:69,(anonymous_9)
+FN:86,(anonymous_10)
+FN:88,(anonymous_11)
+FN:95,(anonymous_12)
+FNF:13
+FNH:13
+FNDA:8,(anonymous_0)
+FNDA:15,(anonymous_1)
+FNDA:5,(anonymous_2)
+FNDA:8,(anonymous_3)
+FNDA:5,(anonymous_4)
+FNDA:9,(anonymous_5)
+FNDA:20,(anonymous_6)
+FNDA:11,(anonymous_7)
+FNDA:12,(anonymous_8)
+FNDA:22,(anonymous_9)
+FNDA:2,(anonymous_10)
+FNDA:4,(anonymous_11)
+FNDA:1,(anonymous_12)
+DA:1,1
+DA:2,1
+DA:12,15
+DA:15,8
+DA:16,8
+DA:30,5
+DA:31,5
+DA:32,8
+DA:44,5
+DA:45,20
+DA:47,5
+DA:48,11
+DA:69,12
+DA:70,22
+DA:87,2
+DA:88,2
+DA:89,4
+DA:90,4
+DA:91,3
+DA:93,4
+DA:95,2
+DA:99,1
+LF:22
+LH:22
+BRDA:12,0,0,7
+BRDA:12,0,1,1
+BRDA:15,1,0,8
+BRDA:15,1,1,1
+BRDA:90,2,0,3
+BRDA:90,2,1,1
+BRDA:93,3,0,4
+BRDA:93,3,1,1
+BRF:8
+BRH:8
+end_of_record

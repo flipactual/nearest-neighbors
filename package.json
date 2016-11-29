@@ -1,6 +1,6 @@
 {
   "name": "nearest-neighbors",
-  "version": "4.0.6",
+  "version": "4.0.7",
   "description": "Find nearest neighbors & classify entities based on their neighbors",
   "main": "index.js",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "test": "mocha",
     "coverage": "nyc --reporter=html mocha",
     "view-coverage": "open ./coverage/index.html",
-    "codecov": "nyc --reporter=text-lcov > coverage.lcov && codecov",
+    "codecov": "nyc --reporter=text-lcov mocha > coverage.lcov && codecov",
     "lint": "eslint ./**/*.js --",
     "readme": "emdaer",
     "compile": "babel src -d lib",
