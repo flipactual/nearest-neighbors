@@ -1,8 +1,8 @@
 {
   "name": "nearest-neighbors",
-  "version": "4.0.7",
+  "version": "4.0.8",
   "description": "Find nearest neighbors & classify entities based on their neighbors",
-  "main": "index.js",
+  "main": "lib/index.js",
   "license": "MIT",
   "repository": "flipactual/nearest-neighbors",
   "author": {
